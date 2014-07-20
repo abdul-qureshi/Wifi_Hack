@@ -10,8 +10,12 @@ script(type='text/javascript').
 
 	testData.on('value', function(data) {
 		var message = data.val();
-		$('#title').append(message.testes);
+		updateTitle(message.testes);
 	});
+
+	function updateTitle(title) {
+		$('#title').append(title);
+	}
 
 script(type='text/javascript').
 	var _gaq = _gaq || [];
