@@ -31,14 +31,6 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-var testData = new Firebase("https://scorching-fire-2712.firebaseio.com/");
-testData.set("hello world");
-
-testData.on('value', function(snapshot) {
-  var message = snapshot.val();
-  console.log(message);
-});
-
 app.get('/', routes.index);
 app.get('/users', user.list);
 
