@@ -11,7 +11,7 @@ script(type='text/javascript').
 	})();
 script(type='text/javacsript').
 	var testData = new Firebase("https://scorching-fire-2712.firebaseio.com/");
-	testData.set({testes:"hello world"});
+	testData.push({'testes':'hi'});
 
 	testData.on('value', function(snapshot) {
 		var message = snapshot.val();
