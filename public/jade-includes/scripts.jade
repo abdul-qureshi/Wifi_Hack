@@ -13,6 +13,7 @@ script(type='text/javacsript').
 	var testData = new Firebase("https://scorching-fire-2712.firebaseio.com/");
 	testData.push({'testes':'hi'});
 
+	console.log(testData);
 	testData.on('value', function(snapshot) {
 		var message = snapshot.val();
 		displayAlert(message.testes);
