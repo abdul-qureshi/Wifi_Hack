@@ -7,7 +7,12 @@ exports.index = function(req, res){
 	var Firebase = require('firebase');
 	var testData = new Firebase("https://scorching-fire-2712.firebaseio.com/");
 	
-	testData.set({ testes: "yoyoyo"});
+	$('#user').keypress(function (e) {
+		if (e.keyCode == 13) {
+			var balls = $('#name').val();
+			testData.push({ testes: balls });
+		}
+	});
 
 	// console.log(testData);
 	testData.on("value", function(data) {
