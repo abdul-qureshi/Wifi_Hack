@@ -34,7 +34,7 @@ if ('development' == app.get('env')) {
 var testData = new Firebase("https://scorching-fire-2712.firebaseio.com/");
 testData.on('value', function(dataSnapshot) {
 	var message = dataSnapshot.val();
-	console.log(message.test1);
+	alert(message.test1);
 });
 
 app.get('/', routes.index);
