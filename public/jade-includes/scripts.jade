@@ -4,18 +4,15 @@ script(type='text/javascript').
 	$('#user').keypress(function (e) {
 		if (e.keyCode == 13) {
 			var balls = $('#user').val();
-			testData.push({ testes: balls });
+			testData.set({ testes: balls });
 		}
 	});
 
-	testData.on('value', function(snapshot) {
-		var message = snapshot.val();
-		changeTitle(message.testes);
+	testData.on('value', function(data) {
+		var message = data.val();
+		$('#title').append(message.testes);
 	});
 
-	function changeTitle(title) {
-		$('#title').text(title).appendTo('#box');
-	};
 script(type='text/javascript').
 	var _gaq = _gaq || [];
 	_gaq.push(['_setAccount', 'UA-36112904-2']);
