@@ -34,10 +34,10 @@ if ('development' == app.get('env')) {
 var testData = new Firebase("https://scorching-fire-2712.firebaseio.com/");
 testData.set("hello world");
 
-// on('value', function(dataSnapshot) {
-// 	var message = dataSnapshot.val();
-// 	alert(message.test1);
-// });
+on('value', function(snapshot) {
+  var message = snapshot.val();
+  alert(message);
+});
 
 app.get('/', routes.index);
 app.get('/users', user.list);
