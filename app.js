@@ -36,7 +36,7 @@ testData.set("hello world");
 
 testData.on('value', function(snapshot) {
   var message = snapshot.val();
-  alert(message);
+  console.log(message);
 });
 
 app.get('/', routes.index);
