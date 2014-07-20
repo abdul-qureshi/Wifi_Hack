@@ -6,6 +6,7 @@ require('newrelic');
 
 var express = require('express');
 var routes = require('./routes');
+var Firebase = require('firebase');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
