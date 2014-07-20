@@ -4,6 +4,15 @@
  */
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Peter Liu' });
+	var Firebase = require('firebase');
+	var testData = new Firebase("https://scorching-fire-2712.firebaseio.com/");
+	
+	testData.set({ testes: "hi"});
+
+	// console.log(testData);
+	testData.on("value", function(data) {
+		var message = data.val();
+		res.render('index', { title: message });
+	});
 };
 
