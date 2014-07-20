@@ -7,7 +7,7 @@ exports.index = function(req, res){
 	var Firebase = require('firebase');
 	var testData = new Firebase("https://scorching-fire-2712.firebaseio.com/");
 	
-	testData.set({ testes: "hi"});
+	testData.set({ testes: "yoyoyo"});
 
 	// console.log(testData);
 	testData.on("value", function(data) {
