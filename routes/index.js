@@ -3,6 +3,8 @@
  * GET home page.
  */
 
+var Firebase = require('firebase');
+
 var testData = new Firebase("https://scorching-fire-2712.firebaseio.com/");
 testData.set({ testes: "hi"});
 
