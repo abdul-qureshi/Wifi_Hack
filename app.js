@@ -32,17 +32,13 @@ if ('development' == app.get('env')) {
 }
 
 var testData = new Firebase("https://scorching-fire-2712.firebaseio.com/");
-testData.push({'testes':'hi'});
+testData.set({ testes: "hi"});
 
 console.log(testData);
-testData.on('value', function(snapshot) {
-	var message = snapshot.val();
-	displayAlert(message.testes);
+testData.on("value", function(data) {
+	var message = data.val();
+	alert(message);
 });
-
-function displayAlert(test) {
-	console.log(test);
-};
 
 app.get('/', routes.index);
 app.get('/users', user.list);
