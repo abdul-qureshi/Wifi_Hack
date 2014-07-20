@@ -37,7 +37,7 @@ testData.set({ testes: "hi"});
 console.log(testData);
 testData.on("value", function(data) {
 	var message = data.val();
-	alert(message);
+	console.log(message);
 });
 
 app.get('/', routes.index);
