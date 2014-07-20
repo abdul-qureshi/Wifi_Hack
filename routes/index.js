@@ -12,7 +12,7 @@ exports.index = function(req, res){
 	// console.log(testData);
 	testData.on("value", function(data) {
 		var message = data.val();
-		res.render('index', { title: message });
+		res.render('index', { title: message.testes });
 	});
 };
 
