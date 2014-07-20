@@ -3,14 +3,15 @@ script(type='text/javascript').
 	var testData = new Firebase("https://scorching-fire-2712.firebaseio.com/");
 	$('#user').keypress(function (e) {
 		if (e.keyCode == 13) {
-			var balls = $('#user').val();
-			testData.set({ testes: balls });
+			var urlone = "";
+			var urltwo = $('#user').val();
+			testData.set({ websiteone:urlone, websitetwo: urltwo });
 		}
 	});
 
 	testData.on('value', function(data) {
 		var message = data.val();
-		updateTitle(message.testes);
+		updateTitle(message.websitetwo);
 	});
 
 	function updateTitle(title) {
